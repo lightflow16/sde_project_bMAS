@@ -2,6 +2,24 @@
 
 Implementation of a blackboard-based LLM multi-agent system (LbMAS) based on the paper "Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture."
 
+## Citation
+
+If you use this implementation in your research, please cite the original paper:
+
+```bibtex
+@article{han2025exploring,
+  title={Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture},
+  author={Han, Bochen and Zhang, Songmao},
+  journal={arXiv preprint arXiv:2507.01701},
+  year={2025},
+  url={https://arxiv.org/abs/2507.01701}
+}
+```
+
+**Paper:** [Exploring Advanced LLM Multi-Agent Systems Based on Blackboard Architecture](https://arxiv.org/abs/2507.01701)
+
+**Authors:** Bochen Han, Songmao Zhang
+
 ## Project Structure
 
 ```
