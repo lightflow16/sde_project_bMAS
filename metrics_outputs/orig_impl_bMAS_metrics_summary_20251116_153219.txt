@@ -1,0 +1,82 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - orig_impl_bMAS
+================================================================================
+
+Timestamp: 2025-11-16T15:31:08.341007
+Problem: A small town police officer pulled over a driver for speeding. He believed that the driver was acting irritable and fidgety, but he had no articulable reason to think anything was wrong. He searched t...
+Ground Truth: A
+Final Answer: A
+Correct: True
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 5
+Consensus Process: decider_final
+Rounds to Consensus: 2
+Critiques to Consensus: 1
+Final Answer Agreement Rate: 25.00%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 17
+Trace Length: 1334 characters
+Agent Outputs Logged: 5
+Decision Steps Logged: 1
+Critique Records: 1
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 4351
+Prompt Tokens: 0
+Completion Tokens: 4351
+Execution Time: 70.62 seconds
+Peak Memory: 127.40 MB
+Average CPU: 0.00%
+Rounds: 2
+Agent Count: 8
+LLM Calls: 5
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 1
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

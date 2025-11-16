@@ -1,0 +1,84 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - orig_impl_bMAS
+================================================================================
+
+Timestamp: 2025-11-16T15:29:09.648726
+Problem: If the economy were experiencing a recessionary gap choose the option below that would be an appropriate fiscal policy to eliminate the gap and the predicted impact of the policy on real GDP and unemp...
+Ground Truth: D
+Final Answer: ```json
+{"output":"**Option: D) Decrease taxes. Real GDP: Increase. Unemployment: Decrease.** (with the caveat about the magnitude of the effect depending on the size of the cut and labor market conditions).**”}.
+```
+Correct: True
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 3
+Consensus Process: blackboard_iterative
+Rounds to Consensus: 4
+Critiques to Consensus: 2
+Final Answer Agreement Rate: 37.50%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 23
+Trace Length: 1762 characters
+Agent Outputs Logged: 7
+Decision Steps Logged: 0
+Critique Records: 2
+Clear Reasoning Path: False
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 6849
+Prompt Tokens: 0
+Completion Tokens: 6849
+Execution Time: 81.43 seconds
+Peak Memory: 127.39 MB
+Average CPU: 0.00%
+Rounds: 4
+Agent Count: 8
+LLM Calls: 7
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 2
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: False
+
+================================================================================

@@ -1,0 +1,87 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - bMAS
+================================================================================
+
+Timestamp: 2025-11-16T01:26:43.389708
+Problem: The maximum sustainable power:
+
+A) usually remains constant during a race.
+B) declines with the distance of the race.
+C) is improved by a high fat diet.
+D) is inversely related to muscle glycogen cont...
+Ground Truth: 1
+Final Answer: B
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 4
+Consensus Process: decider_final
+Rounds to Consensus: 2
+Critiques to Consensus: 1
+Final Answer Agreement Rate: 25.00%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 15
+Trace Length: 1004 characters
+Agent Outputs Logged: 4
+Decision Steps Logged: 1
+Critique Records: 1
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 2129
+Prompt Tokens: 0
+Completion Tokens: 2129
+Execution Time: 69.88 seconds
+Peak Memory: 195.63 MB
+Average CPU: 0.00%
+Rounds: 2
+Agent Count: 8
+LLM Calls: 4
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 1
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

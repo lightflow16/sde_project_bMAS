@@ -152,7 +152,7 @@ class ExperimentLogger:
             filename = f"trace_{self.experiment_id}.json"
         
         filepath = self.output_dir / filename
-        with open(filepath, 'w', encoding='utf-8') as f:
+        with open(filepath, 'w', encoding='utf-8', errors='replace') as f:
             json.dump(self.trace, f, indent=2, ensure_ascii=False)
         
         return filepath
@@ -245,7 +245,7 @@ class ExperimentLogger:
         
         filepath = self.output_dir / filename
         report = self.generate_text_report()
-        with open(filepath, 'w', encoding='utf-8') as f:
+        with open(filepath, 'w', encoding='utf-8', errors='replace') as f:
             f.write(report)
         
         return filepath

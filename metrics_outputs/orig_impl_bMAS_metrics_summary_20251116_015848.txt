@@ -1,0 +1,83 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - orig_impl_bMAS
+================================================================================
+
+Timestamp: 2025-11-16T01:56:28.572003
+Problem: Which of the following must get nutrients from a transport system?...
+Ground Truth: C
+Final Answer: Solution ready: False
+Final answer: N/A
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 2
+Consensus Process: blackboard_iterative
+Rounds to Consensus: 4
+Critiques to Consensus: 2
+Final Answer Agreement Rate: 25.00%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 27
+Trace Length: 1642 characters
+Agent Outputs Logged: 9
+Decision Steps Logged: 0
+Critique Records: 2
+Clear Reasoning Path: False
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 7832
+Prompt Tokens: 0
+Completion Tokens: 7832
+Execution Time: 140.22 seconds
+Peak Memory: 169.18 MB
+Average CPU: 0.00%
+Rounds: 4
+Agent Count: 8
+LLM Calls: 9
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 2
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: False
+
+================================================================================

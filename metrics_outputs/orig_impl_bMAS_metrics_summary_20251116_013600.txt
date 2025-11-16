@@ -1,0 +1,87 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - orig_impl_bMAS
+================================================================================
+
+Timestamp: 2025-11-16T01:34:49.689518
+Problem: Find the number that makes the statement 12 over 18 = ? over 9 true.
+
+A) 4
+B) 6
+C) 8
+D) 12...
+Ground Truth: 0
+Final Answer: 6
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 5
+Consensus Process: decider_final
+Rounds to Consensus: 2
+Critiques to Consensus: 1
+Final Answer Agreement Rate: 42.86%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 17
+Trace Length: 1103 characters
+Agent Outputs Logged: 5
+Decision Steps Logged: 1
+Critique Records: 1
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 3180
+Prompt Tokens: 0
+Completion Tokens: 3180
+Execution Time: 71.18 seconds
+Peak Memory: 195.75 MB
+Average CPU: 0.00%
+Rounds: 2
+Agent Count: 7
+LLM Calls: 5
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 1
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

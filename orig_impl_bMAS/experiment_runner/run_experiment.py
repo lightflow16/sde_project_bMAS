@@ -530,8 +530,8 @@ def run_batch_experiments(tasks: List[Dict[str, Any]],
             
             # Save individual result
             result_file = os.path.join(output_dir, f"result_{i+1}.json")
-            with open(result_file, 'w', encoding='utf-8') as f:
-                json.dump(experiment_result, f, indent=2)
+            with open(result_file, 'w', encoding='utf-8', errors='replace') as f:
+                json.dump(experiment_result, f, indent=2, ensure_ascii=False)
         
         except Exception as e:
             print(f"Error running experiment {i+1}: {e}")
@@ -546,8 +546,8 @@ def run_batch_experiments(tasks: List[Dict[str, Any]],
     
     # Save summary
     summary_file = os.path.join(output_dir, "summary.json")
-    with open(summary_file, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2)
+    with open(summary_file, 'w', encoding='utf-8', errors='replace') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
     
     print(f"\n{'='*60}")
     print("Batch Experiment Summary")

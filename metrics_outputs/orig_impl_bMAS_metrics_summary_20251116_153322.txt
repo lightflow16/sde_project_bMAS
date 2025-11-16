@@ -1,0 +1,83 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - orig_impl_bMAS
+================================================================================
+
+Timestamp: 2025-11-16T15:32:19.062731
+Problem: A landscaper agreed to maintain the yard of a homeowner for six months for a fee of $300 per month, payable at the end of the six-month period. This amount was the fair market value of the work to be ...
+Ground Truth: C
+Final Answer: Solution ready: False
+Final answer: N/A
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 3
+Consensus Process: blackboard_iterative
+Rounds to Consensus: 4
+Critiques to Consensus: 4
+Final Answer Agreement Rate: 37.50%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 29
+Trace Length: 2045 characters
+Agent Outputs Logged: 10
+Decision Steps Logged: 0
+Critique Records: 4
+Clear Reasoning Path: False
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 15333
+Prompt Tokens: 0
+Completion Tokens: 15333
+Execution Time: 63.07 seconds
+Peak Memory: 127.43 MB
+Average CPU: 0.00%
+Rounds: 4
+Agent Count: 8
+LLM Calls: 10
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 4
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: False
+
+================================================================================

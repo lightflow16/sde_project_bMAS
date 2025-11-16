@@ -1,0 +1,82 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - orig_impl_bMAS
+================================================================================
+
+Timestamp: 2025-11-16T02:00:35.780927
+Problem: A wind farm contains a large number of windmills to generate electricity. Which is the BEST reason wind farms are not located near forests?...
+Ground Truth: A
+Final Answer: The high risk of ecological damage and biodiversity loss—caused by habitat fragmentation, noise and visual/light disturbance, and increased wildlife mortality—is the best reason wind farms are avoided near forests.
+Correct: True
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 2
+Consensus Process: blackboard_iterative
+Rounds to Consensus: 4
+Critiques to Consensus: 1
+Final Answer Agreement Rate: 25.00%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 27
+Trace Length: 2445 characters
+Agent Outputs Logged: 8
+Decision Steps Logged: 2
+Critique Records: 1
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 6860
+Prompt Tokens: 0
+Completion Tokens: 6860
+Execution Time: 115.32 seconds
+Peak Memory: 154.95 MB
+Average CPU: 0.00%
+Rounds: 4
+Agent Count: 8
+LLM Calls: 8
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 1
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

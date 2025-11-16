@@ -72,12 +72,25 @@ class DeciderAgent(Agent):
     def act(self, problem: str, context: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Decide if solution is ready and provide final answer."""
         blackboard_state = self.read_blackboard()
-        prompt = DECIDER_PROMPT.format(
+        
+        # Detect if this is a multiple-choice question
+        problem_lower = problem.lower()
+        is_multiple_choice = any(marker in problem_lower for marker in ["a)", "b)", "c)", "d)", "a.", "b.", "c.", "d."]) or \
+                           re.search(r'^\s*[a-d]\)', problem_lower, re.MULTILINE)
+        
+        # Enhance prompt for multiple-choice questions
+        base_prompt = DECIDER_PROMPT.format(
             problem=problem,
             blackboard_state=blackboard_state
         )
         
-        response = call_llm(prompt, self.llm_backend, system_prompt=self.system_prompt)
+        # Add specific instructions for multiple-choice
+        if is_multiple_choice:
+            enhanced_prompt = base_prompt + "\n\nIMPORTANT: This is a multiple-choice question. The final answer must be a single letter: A, B, C, or D. Use the format: {{the final answer is boxed[A]}} where A is the chosen option letter."
+        else:
+            enhanced_prompt = base_prompt
+        
+        response = call_llm(enhanced_prompt, self.llm_backend, system_prompt=self.system_prompt)
         parsed = parse_json_response(response["content"])
         
         # Paper format: {"the final answer is boxed[answer]"} or {"continue, waiting for more information"}
@@ -85,16 +98,35 @@ class DeciderAgent(Agent):
         is_solution_ready = False
         
         # Check for paper format
-        if "the final answer is boxed" in str(parsed):
+        if "the final answer is boxed" in str(parsed) or "boxed" in str(parsed).lower():
             # Extract answer from "the final answer is boxed[answer]"
             for key, value in parsed.items():
                 if "the final answer is boxed" in str(value) or "boxed" in str(value):
                     # Try to extract the answer
-                    match = re.search(r'boxed\[(.*?)\]', str(value))
+                    match = re.search(r'boxed\[(.*?)\]', str(value), re.IGNORECASE)
                     if match:
-                        final_answer = match.group(1)
+                        final_answer = match.group(1).strip()
                     else:
-                        final_answer = str(value).replace("the final answer is boxed", "").strip("[]")
+                        # Try alternative formats
+                        match = re.search(r'boxed\s*[\[\(]?\s*([A-D0-9]+)\s*[\]\)]?', str(value), re.IGNORECASE)
+                        if match:
+                            final_answer = match.group(1).strip()
+                        else:
+                            final_answer = str(value).replace("the final answer is boxed", "").strip("[]()")
+                    
+                    # Normalize multiple-choice answers to letters
+                    if is_multiple_choice and final_answer:
+                        final_answer = final_answer.upper().strip()
+                        # Convert numeric indices to letters (0->A, 1->B, 2->C, 3->D)
+                        if final_answer.isdigit():
+                            idx = int(final_answer)
+                            if 0 <= idx <= 3:
+                                final_answer = chr(65 + idx)
+                        # Extract letter if embedded in text
+                        letter_match = re.search(r'\b([A-D])\b', final_answer)
+                        if letter_match:
+                            final_answer = letter_match.group(1)
+                    
                     is_solution_ready = True
                     break
         elif "continue, waiting for more information" in str(parsed):
@@ -103,6 +135,17 @@ class DeciderAgent(Agent):
             # Fallback to old format
             is_solution_ready = parsed.get("is_solution_ready", False)
             final_answer = parsed.get("final_answer", None)
+            
+            # Normalize multiple-choice answers
+            if is_multiple_choice and final_answer:
+                final_answer = str(final_answer).upper().strip()
+                if final_answer.isdigit():
+                    idx = int(final_answer)
+                    if 0 <= idx <= 3:
+                        final_answer = chr(65 + idx)
+                letter_match = re.search(r'\b([A-D])\b', final_answer)
+                if letter_match:
+                    final_answer = letter_match.group(1)
         
         # Write to blackboard
         decision_content = f"Solution ready: {is_solution_ready}\nFinal answer: {final_answer if final_answer else 'N/A'}"
@@ -110,7 +153,11 @@ class DeciderAgent(Agent):
         
         return {
             "agent": self.name,
-            "response": parsed,
+            "response": {
+                **parsed,
+                "final_answer": final_answer,
+                "is_solution_ready": is_solution_ready
+            },
             "raw_response": response["content"],
             "tokens": response["metadata"].get("tokens_used", 0),
             "is_solution_ready": is_solution_ready,

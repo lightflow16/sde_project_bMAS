@@ -1,0 +1,86 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - CoT
+================================================================================
+
+Timestamp: 2025-11-16T02:25:29.958211
+Problem: Jason has a phone plan of 1000 minutes per month. Every day he has a 15-minute call with his boss, and he's had 300 extra minutes of call this month to other people. How many minutes does Jason have l...
+Ground Truth: 15
+Final Answer: \text{ minutes}
+\]
+
+---
+
+**Answer:** Jason has **250 minutes left** in his phone plan for the month.
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 1
+Consensus Process: single_agent
+Rounds to Consensus: 1
+Critiques to Consensus: 0
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 4
+Trace Length: 312 characters
+Agent Outputs Logged: 1
+Decision Steps Logged: 1
+Critique Records: 0
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 524
+Prompt Tokens: 129
+Completion Tokens: 395
+Execution Time: 14.03 seconds
+Peak Memory: 69.76 MB
+Average CPU: 0.00%
+Rounds: 1
+Agent Count: 1
+LLM Calls: 1
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 0 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 0
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

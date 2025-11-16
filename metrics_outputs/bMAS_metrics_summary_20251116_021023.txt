@@ -1,0 +1,82 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - bMAS
+================================================================================
+
+Timestamp: 2025-11-16T02:09:06.431041
+Problem: Tim decides to cancel his cable subscription and get streaming services.  He gets Netflix for $10 a month.  Hulu and Disney Plus normally cost $10 a month each but he saves 20% for bundling.  How much...
+Ground Truth: 10
+Final Answer: 34
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 6
+Consensus Process: decider_final
+Rounds to Consensus: 1
+Critiques to Consensus: 1
+Final Answer Agreement Rate: 85.71%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 17
+Trace Length: 1288 characters
+Agent Outputs Logged: 6
+Decision Steps Logged: 1
+Critique Records: 1
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 3202
+Prompt Tokens: 0
+Completion Tokens: 3202
+Execution Time: 76.82 seconds
+Peak Memory: 109.34 MB
+Average CPU: 0.00%
+Rounds: 1
+Agent Count: 7
+LLM Calls: 6
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 1
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

@@ -5,6 +5,7 @@ from typing import Dict, Any, List, Optional
 import json
 import os
 import sys
+import re
 from datetime import datetime
 
 # Add parent directories to path for imports
@@ -26,9 +27,7 @@ from control_unit.scheduler import ControlUnit
 from llm_integration.api import random_model_choice
 import config
 from utils.logger import ExperimentLogger
-from utils.answer_validation import cross_validate_decider_response, validate_answer_consistency
-import sys
-import os
+from utils.answer_validation import cross_validate_decider_response, validate_answer_consistency, extract_answer_from_text
 
 # Add root directory to path for metrics tracker
 _root_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -87,6 +86,49 @@ def create_agent_pool(blackboard: Blackboard, problem: str) -> List:
         # Continue with just predefined agents
     
     return agents
+
+
+def extract_answer_from_blackboard_content(content: str, is_multiple_choice: bool = False) -> Optional[str]:
+    """
+    Extract answer from blackboard content, handling multiple-choice format.
+    
+    Args:
+        content: Content string from blackboard
+        is_multiple_choice: Whether this is a multiple-choice question
+        
+    Returns:
+        Extracted answer or None
+    """
+    if not content:
+        return None
+    
+    # For multiple-choice, extract letter (A, B, C, D)
+    if is_multiple_choice:
+        # Look for boxed format: boxed[A] or boxed[A]
+        boxed_match = re.search(r'boxed\[([A-D])\]', content, re.IGNORECASE)
+        if boxed_match:
+            return boxed_match.group(1).upper()
+        
+        # Look for explicit answer markers
+        patterns = [
+            r'(?:the\s+)?(?:final\s+)?answer\s+is\s*:?\s*([A-D])',
+            r'answer\s*:?\s*([A-D])',
+            r'choice\s*:?\s*([A-D])',
+            r'option\s*:?\s*([A-D])',
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, content, re.IGNORECASE)
+            if match:
+                return match.group(1).upper()
+        
+        # Extract any standalone letter A-D
+        letters = re.findall(r'\b([A-D])\b', content.upper())
+        if letters:
+            return letters[-1]  # Return last letter found
+    
+    # For general problems, use existing extraction
+    problem_type = "multiple_choice" if is_multiple_choice else "general"
+    return extract_answer_from_text(content, problem_type)
 
 
 def run_single_experiment(problem: str, max_rounds: int = config.MAX_ROUNDS,
@@ -265,7 +307,17 @@ def run_single_experiment(problem: str, max_rounds: int = config.MAX_ROUNDS,
                     
                     # IMPROVEMENT: Cross-validate decider response
                     # Detect problem type for better validation
-                    problem_type = "math" if any(word in problem.lower() for word in ["calculate", "equal", "value", "trinket", "blinket"]) else "general"
+                    problem_lower = problem.lower()
+                    
+                    # Detect multiple-choice questions (MMLU, ARC, etc.)
+                    if any(marker in problem_lower for marker in ["a)", "b)", "c)", "d)", "a.", "b.", "c.", "d."]) or \
+                       re.search(r'^\s*[a-d]\)', problem_lower, re.MULTILINE):
+                        problem_type = "multiple_choice"
+                    # Detect math problems
+                    elif any(word in problem_lower for word in ["calculate", "equal", "value", "trinket", "blinket", "solve for", "what is"]):
+                        problem_type = "math"
+                    else:
+                        problem_type = "general"
                     
                     validated_result = cross_validate_decider_response(result, problem_type)
                     
@@ -375,15 +427,24 @@ def run_single_experiment(problem: str, max_rounds: int = config.MAX_ROUNDS,
     
     # If no solution from decider, try to extract from blackboard
     if not execution_log["final_answer"]:
+        # Detect problem type for better extraction
+        problem_lower = problem.lower()
+        is_multiple_choice = any(marker in problem_lower for marker in ["a)", "b)", "c)", "d)", "a.", "b.", "c.", "d."]) or \
+                           re.search(r'^\s*[a-d]\)', problem_lower, re.MULTILINE)
+        
         # First, check private spaces (reflection spaces may contain final solutions)
         for space_key, messages in blackboard.private_spaces.items():
             if "reflection" in space_key.lower() or "debate" in space_key.lower():
                 # Look for solution-type messages in private spaces
                 for msg in reversed(messages):  # Check most recent first
-                    if "solution" in msg.get("type", "").lower() or "final" in msg.get("content", "").lower():
-                        execution_log["final_answer"] = msg.get("content", "No answer found")
-                        execution_log["answer_source"] = f"private_space_{space_key}"
-                        break
+                    content = msg.get("content", "")
+                    if "solution" in msg.get("type", "").lower() or "final" in content.lower():
+                        # Extract answer from content
+                        extracted = extract_answer_from_blackboard_content(content, is_multiple_choice)
+                        if extracted:
+                            execution_log["final_answer"] = extracted
+                            execution_log["answer_source"] = f"private_space_{space_key}"
+                            break
                 if execution_log["final_answer"]:
                     break
         
@@ -393,12 +454,25 @@ def run_single_experiment(problem: str, max_rounds: int = config.MAX_ROUNDS,
             decision_messages = blackboard.get_public_messages("decision")
             if decision_messages:
                 last_decision = decision_messages[-1]
-                execution_log["final_answer"] = last_decision.get("content", "No answer found")
+                content = last_decision.get("content", "")
+                extracted = extract_answer_from_blackboard_content(content, is_multiple_choice)
+                execution_log["final_answer"] = extracted if extracted else content
                 execution_log["answer_source"] = "public_decision"
             else:
-                # Use last message as fallback
-                if blackboard.public_space:
-                    execution_log["final_answer"] = blackboard.public_space[-1].get("content", "No answer found")
+                # Check all public messages for answers
+                for msg in reversed(blackboard.public_space):
+                    content = msg.get("content", "")
+                    extracted = extract_answer_from_blackboard_content(content, is_multiple_choice)
+                    if extracted:
+                        execution_log["final_answer"] = extracted
+                        execution_log["answer_source"] = "public_message_extraction"
+                        break
+                
+                # Use last message as final fallback
+                if not execution_log["final_answer"] and blackboard.public_space:
+                    last_content = blackboard.public_space[-1].get("content", "No answer found")
+                    extracted = extract_answer_from_blackboard_content(last_content, is_multiple_choice)
+                    execution_log["final_answer"] = extracted if extracted else last_content
                     execution_log["answer_source"] = "public_last_message"
     
     # Evaluate if ground truth provided
@@ -536,8 +610,8 @@ def run_batch_experiments(tasks: List[Dict[str, Any]],
             
             # Save individual result
             result_file = os.path.join(output_dir, f"result_{i+1}.json")
-            with open(result_file, 'w', encoding='utf-8') as f:
-                json.dump(experiment_result, f, indent=2)
+            with open(result_file, 'w', encoding='utf-8', errors='replace') as f:
+                json.dump(experiment_result, f, indent=2, ensure_ascii=False)
         
         except Exception as e:
             print(f"Error running experiment {i+1}: {e}")
@@ -552,8 +626,8 @@ def run_batch_experiments(tasks: List[Dict[str, Any]],
     
     # Save summary
     summary_file = os.path.join(output_dir, "summary.json")
-    with open(summary_file, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2)
+    with open(summary_file, 'w', encoding='utf-8', errors='replace') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
     
     print(f"\n{'='*60}")
     print("Batch Experiment Summary")

@@ -1,0 +1,86 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - bMAS
+================================================================================
+
+Timestamp: 2025-11-16T15:18:55.067428
+Problem: How did Eratosthenes estimate the size of Earth in 240 B.C.?
+
+A) By observing the duration of a solar eclipse.
+B) By measuring the size of Earth's shadow on the Moon in a lunar eclipse.
+C) By comparin...
+Ground Truth: C
+Final Answer: A
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 3
+Consensus Process: blackboard_iterative
+Rounds to Consensus: 4
+Critiques to Consensus: 2
+Final Answer Agreement Rate: 37.50%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 27
+Trace Length: 2176 characters
+Agent Outputs Logged: 9
+Decision Steps Logged: 0
+Critique Records: 2
+Clear Reasoning Path: False
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 13947
+Prompt Tokens: 0
+Completion Tokens: 13947
+Execution Time: 114.35 seconds
+Peak Memory: 127.73 MB
+Average CPU: 0.00%
+Rounds: 4
+Agent Count: 8
+LLM Calls: 9
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 2
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: False
+
+================================================================================

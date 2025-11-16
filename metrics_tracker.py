@@ -418,7 +418,7 @@ class MetricsTracker:
             filename = f"{self.system_name}_metrics_{timestamp}.json"
         
         filepath = os.path.join(self.output_dir, filename)
-        with open(filepath, 'w', encoding='utf-8') as f:
+        with open(filepath, 'w', encoding='utf-8', errors='replace') as f:
             json.dump(self.metrics, f, indent=2)
         
         return filepath
@@ -431,7 +431,7 @@ class MetricsTracker:
         
         filepath = os.path.join(self.output_dir, filename)
         
-        with open(filepath, 'w', encoding='utf-8') as f:
+        with open(filepath, 'w', encoding='utf-8', errors='replace') as f:
             f.write("=" * 80 + "\n")
             f.write(f"COMPREHENSIVE METRICS REPORT - {self.system_name}\n")
             f.write("=" * 80 + "\n\n")

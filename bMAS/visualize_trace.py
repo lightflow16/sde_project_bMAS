@@ -100,7 +100,7 @@ def visualize_flow(trace_file: str, output_file: Optional[str] = None):
     output = "\n".join(lines)
     
     if output_file:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, 'w', encoding='utf-8', errors='replace') as f:
             f.write(output)
         print(f"Flow visualization saved to: {output_file}")
     else:

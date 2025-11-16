@@ -1,0 +1,83 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - Static_MAS
+================================================================================
+
+Timestamp: 2025-11-16T02:03:05.168223
+Problem: Which part of an atom has the least mass?...
+Ground Truth: A
+Final Answer: electron
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 4
+Consensus Process: majority_vote
+Rounds to Consensus: 1
+Critiques to Consensus: 0
+Final Answer Agreement Rate: 57.14%
+Decision Confidence: 0.57
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 16
+Trace Length: 1157 characters
+Agent Outputs Logged: 7
+Decision Steps Logged: 1
+Critique Records: 0
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 2594
+Prompt Tokens: 0
+Completion Tokens: 2594
+Execution Time: 33.26 seconds
+Peak Memory: 151.01 MB
+Average CPU: 0.00%
+Rounds: 1
+Agent Count: 7
+LLM Calls: 7
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 1 events
+Transparency Evidence: 0 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 0
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

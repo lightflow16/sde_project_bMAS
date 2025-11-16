@@ -1,0 +1,89 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - orig_impl_bMAS
+================================================================================
+
+Timestamp: 2025-11-16T02:14:42.889478
+Problem: Tim decides to cancel his cable subscription and get streaming services.  He gets Netflix for $10 a month.  Hulu and Disney Plus normally cost $10 a month each but he saves 20% for bundling.  How much...
+Ground Truth: 10
+Final Answer: {"output":"[EXPERT_ANALYSIS] My analysis confirms the previous calculations. The key components of Tim's savings are:
+- Original cable cost: $60/month
+- Streaming costs with bundle discount:
+  * Netflix: $10/month (no discount)
+  * Hulu: $8/month (-20% off $10)
+  * Disney+: $8/month (-20% off $10)
+- Total streaming cost: $26/month ($34 savings)
+I would like to add that this represents a significant budget optimization, reducing his entertainment expenses by nearly two-thirds. Additionally, the bundle discount is crucial - without it, the Hulu and Disney+ combination would cost $20/month instead of $16, resulting in only $28/month for streaming ($32 monthly savings). The 20% bundle discount adds an extra $6/month in savings compared to non-bundled services. This demonstrates how strategic bundling can enhance the overall value proposition of switching from traditional cable to streaming services."}
+Correct: True
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 3
+Consensus Process: blackboard_iterative
+Rounds to Consensus: 4
+Critiques to Consensus: 0
+Final Answer Agreement Rate: 37.50%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 29
+Trace Length: 2662 characters
+Agent Outputs Logged: 10
+Decision Steps Logged: 0
+Critique Records: 0
+Clear Reasoning Path: False
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 7877
+Prompt Tokens: 0
+Completion Tokens: 7877
+Execution Time: 123.98 seconds
+Peak Memory: 90.63 MB
+Average CPU: 0.00%
+Rounds: 4
+Agent Count: 8
+LLM Calls: 10
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 0
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: False
+
+================================================================================

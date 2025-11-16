@@ -106,7 +106,7 @@ class StaticMASLogger:
         filename = f"static_mas_trace_{timestamp}.json"
         filepath = os.path.join(self.output_dir, filename)
         
-        with open(filepath, 'w', encoding='utf-8') as f:
+        with open(filepath, 'w', encoding='utf-8', errors='replace') as f:
             json.dump(self.log_data, f, indent=2)
         
         return filepath
@@ -117,7 +117,7 @@ class StaticMASLogger:
         filename = f"static_mas_report_{timestamp}.txt"
         filepath = os.path.join(self.output_dir, filename)
         
-        with open(filepath, 'w', encoding='utf-8') as f:
+        with open(filepath, 'w', encoding='utf-8', errors='replace') as f:
             f.write("=" * 80 + "\n")
             f.write("Static MAS Experiment Report\n")
             f.write("=" * 80 + "\n\n")
@@ -550,8 +550,8 @@ def run_batch_experiments(tasks: List[Dict[str, Any]],
     
     # Save summary
     summary_file = os.path.join(output_dir, "summary.json")
-    with open(summary_file, 'w', encoding='utf-8') as f:
-        json.dump(results, f, indent=2)
+    with open(summary_file, 'w', encoding='utf-8', errors='replace') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
     
     print(f"\n{'='*60}")
     print("Batch Experiment Summary")

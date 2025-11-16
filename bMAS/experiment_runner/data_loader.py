@@ -87,7 +87,7 @@ def create_sample_dataset(output_path: str = "bMAS/datasets/sample.json"):
         }
     ]
     
-    with open(output_path, 'w', encoding='utf-8') as f:
+    with open(output_path, 'w', encoding='utf-8', errors='replace') as f:
         json.dump(sample_tasks, f, indent=2)
     
     print(f"Sample dataset created at {output_path}")

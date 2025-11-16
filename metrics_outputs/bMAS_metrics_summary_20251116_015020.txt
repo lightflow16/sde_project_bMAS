@@ -1,0 +1,86 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - bMAS
+================================================================================
+
+Timestamp: 2025-11-16T01:47:44.580877
+Problem: From year to year, farmers rotate different crops in the fields to improve soil nutrients. Why is crop rotation also an effective pest management method?...
+Ground Truth: C
+Final Answer: • Crop rotation can create *ecological traps* for pests by shifting host availability and resource quality, forcing pests to expend energy searching for suitable hosts.
+• Aligning rotation schedules with pest phenology (e.g., planting non‑host crops during peak pest emergence) maximizes suppression by interrupting key life‑stage windows.
+• Incorporating cover crops within rotations supplies continuous nectar, pollen, and prey resources that sustain predators and parasitoids, creating a ready‑made biological control force.
+• Rotational diversity reduces the accumulation of pest‑attracting allelochemicals and host‑specific cues, diminishing pest recruitment and host fidelity.
+• Combining rotation with other cultural practices—such as intercropping, mulching, and adjusted planting dates—amplifies pest suppression and enhances overall ecosystem resilience.
+Correct: True
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 3
+Consensus Process: blackboard_iterative
+Rounds to Consensus: 4
+Critiques to Consensus: 0
+Final Answer Agreement Rate: 37.50%
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 29
+Trace Length: 2744 characters
+Agent Outputs Logged: 10
+Decision Steps Logged: 0
+Critique Records: 0
+Clear Reasoning Path: False
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 20727
+Prompt Tokens: 0
+Completion Tokens: 20727
+Execution Time: 155.65 seconds
+Peak Memory: 181.88 MB
+Average CPU: 0.00%
+Rounds: 4
+Agent Count: 8
+LLM Calls: 10
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 0
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: False
+
+================================================================================

@@ -1,0 +1,84 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - CoT
+================================================================================
+
+Timestamp: 2025-11-16T01:43:22.536317
+Problem: What does the lid of the sarcophagus of Pacal the Great, ruler of Palenque, depict?
+
+A) the slain enemies of the king, with a series of hieroglyphs representing all of the great cities and civilizatio...
+Ground Truth: 1
+Final Answer: B
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 1
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+Error Recovery Rate: 0.00%
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 1
+Consensus Process: single_agent
+Rounds to Consensus: 1
+Critiques to Consensus: 0
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 4
+Trace Length: 214 characters
+Agent Outputs Logged: 1
+Decision Steps Logged: 1
+Critique Records: 0
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 1
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 478
+Prompt Tokens: 120
+Completion Tokens: 358
+Execution Time: 4.71 seconds
+Peak Memory: 195.91 MB
+Average CPU: 0.00%
+Rounds: 1
+Agent Count: 1
+LLM Calls: 1
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 0 events
+Scalability Evidence: 0 events
+Transparency Evidence: 1 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 0
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

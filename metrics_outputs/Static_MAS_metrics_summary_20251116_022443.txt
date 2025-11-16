@@ -1,0 +1,83 @@
+================================================================================
+COMPREHENSIVE METRICS REPORT - Static_MAS
+================================================================================
+
+Timestamp: 2025-11-16T02:24:06.798978
+Problem: Gus spent $20.00 at the grocery store.  He bought 2 bag of chips for $2.00 each, a bucket of fried chicken for $8.00 and a bottle of soda for $1.00.  How much did the apple pie cost?...
+Ground Truth: 2
+Final Answer: 6.00
+Correct: False
+
+================================================================================
+1. ROBUSTNESS TO AGENT ERRORS AND OUTLIERS
+================================================================================
+Total Agent Errors: 0
+Error Corrections: 0
+Resilience Episodes: 0
+Outlier Detections: 0
+Critique Recoveries: 0
+Voting Recoveries: 0
+
+================================================================================
+2. CONSENSUS AND DECISION QUALITY
+================================================================================
+Consensus Set Size: 2
+Consensus Process: majority_vote
+Rounds to Consensus: 1
+Critiques to Consensus: 0
+Final Answer Agreement Rate: 28.57%
+Decision Confidence: 0.29
+
+================================================================================
+3. EXPLAINABILITY AND TRANSPARENCY
+================================================================================
+Reasoning Steps: 16
+Trace Length: 807 characters
+Agent Outputs Logged: 7
+Decision Steps Logged: 1
+Critique Records: 0
+Clear Reasoning Path: True
+
+================================================================================
+4. ERROR TYPES AND FAILURE MODES
+================================================================================
+Wrong Math: 0
+Answer Extraction Issues: 0
+Parsing Errors: 0
+LLM Inconsistencies: 0
+System Breakdowns: 0
+Total Agent Failures: 0
+
+================================================================================
+5. RESOURCE UTILIZATION
+================================================================================
+Total Tokens: 3545
+Prompt Tokens: 0
+Completion Tokens: 3545
+Execution Time: 36.90 seconds
+Peak Memory: 69.74 MB
+Average CPU: 0.00%
+Rounds: 1
+Agent Count: 7
+LLM Calls: 7
+
+================================================================================
+6. QUALITY ATTRIBUTE TRACEABILITY
+================================================================================
+Modularity Evidence: 1 events
+Scalability Evidence: 1 events
+Transparency Evidence: 0 events
+Reliability Evidence: 0 events
+Error Recovery Events: 0
+Traceable Critiques: 0
+
+================================================================================
+7. USER/AUDITOR EXPERIENCE
+================================================================================
+Summary Log Quality: None
+Side-by-Side Tables: False
+Correctness Reporting: None
+Error Trace Quality: None
+Clear Reasoning Path: True
+
+================================================================================

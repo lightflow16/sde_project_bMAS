@@ -41,9 +41,34 @@ def extract_answer_from_text(text: str, problem_type: str = "general") -> Option
     
     # For multiple choice questions, extract letter
     if problem_type == "multiple_choice":
+        # First try to find boxed format: boxed[A] or boxed[A]
+        boxed_match = re.search(r'boxed\[([A-D])\]', text, re.IGNORECASE)
+        if boxed_match:
+            return boxed_match.group(1).upper()
+        
+        # Look for explicit answer markers
+        patterns = [
+            r'(?:the\s+)?(?:final\s+)?answer\s+is\s*:?\s*([A-D])',
+            r'answer\s*:?\s*([A-D])',
+            r'choice\s*:?\s*([A-D])',
+            r'option\s*:?\s*([A-D])',
+            r'select\s*:?\s*([A-D])',
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                return match.group(1).upper()
+        
+        # Extract any standalone letter A-D
         letters = re.findall(r'\b([A-D])\b', text.upper())
         if letters:
             return letters[-1]  # Return last letter found
+        
+        # Try to convert numeric indices (0, 1, 2, 3) to letters
+        numbers = re.findall(r'\b([0-3])\b', text)
+        if numbers:
+            idx = int(numbers[-1])
+            return chr(65 + idx)  # 0->A, 1->B, 2->C, 3->D
     
     # For math problems, extract numbers
     if problem_type == "math":
