@@ -1,0 +1,66 @@
+{
+  "benchmark": "arc_challenge",
+  "timestamp": "2025-11-16T17:00:51.844594",
+  "systems": {
+    "bMAS": {
+      "display_name": "bMAS (LbMAS)",
+      "total_problems": 5,
+      "correct": 0,
+      "incorrect": 5,
+      "accuracy": 0.0,
+      "total_tokens": 60221,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "avg_tokens_per_problem": 12044.2,
+      "total_time": 562.2222220897675,
+      "avg_time_per_problem": 112.44444441795349,
+      "avg_rounds": 3.4,
+      "consensus_rate": 40.0
+    },
+    "orig_bMAS": {
+      "display_name": "orig_impl_bMAS",
+      "total_problems": 5,
+      "correct": 0,
+      "incorrect": 5,
+      "accuracy": 0.0,
+      "total_tokens": 32743,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "avg_tokens_per_problem": 6548.6,
+      "total_time": 512.8332500457764,
+      "avg_time_per_problem": 102.56665000915527,
+      "avg_rounds": 3.4,
+      "consensus_rate": 40.0
+    },
+    "static_mas": {
+      "display_name": "Static MAS",
+      "total_problems": 5,
+      "correct": 0,
+      "incorrect": 5,
+      "accuracy": 0.0,
+      "total_tokens": 17220,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "avg_tokens_per_problem": 3444.0,
+      "total_time": 214.54986786842346,
+      "avg_time_per_problem": 42.909973573684695,
+      "avg_rounds": 1.0,
+      "consensus_rate": 100.0
+    },
+    "cot": {
+      "display_name": "Chain-of-Thought (CoT)",
+      "total_problems": 5,
+      "correct": 2,
+      "incorrect": 3,
+      "accuracy": 40.0,
+      "total_tokens": 8106,
+      "prompt_tokens": 479,
+      "completion_tokens": 7627,
+      "avg_tokens_per_problem": 1621.2,
+      "total_time": 92.23209929466248,
+      "avg_time_per_problem": 18.446419858932494,
+      "avg_rounds": 1.0,
+      "consensus_rate": 100.0
+    }
+  }
+}

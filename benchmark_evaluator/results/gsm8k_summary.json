@@ -1,0 +1,51 @@
+{
+  "benchmark": "gsm8k",
+  "timestamp": "2025-11-16T17:19:00.990338",
+  "systems": {
+    "bMAS": {
+      "display_name": "bMAS (LbMAS)",
+      "total_problems": 5,
+      "correct": 0,
+      "incorrect": 5,
+      "accuracy": 0.0,
+      "total_tokens": 23870,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "avg_tokens_per_problem": 4774.0,
+      "total_time": 363.25428199768066,
+      "avg_time_per_problem": 72.65085639953614,
+      "avg_rounds": 2.2,
+      "consensus_rate": 80.0
+    },
+    "orig_bMAS": {
+      "display_name": "orig_impl_bMAS",
+      "total_problems": 5,
+      "correct": 0,
+      "incorrect": 5,
+      "accuracy": 0.0,
+      "total_tokens": 24058,
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "avg_tokens_per_problem": 4811.6,
+      "total_time": 440.0577824115753,
+      "avg_time_per_problem": 88.01155648231506,
+      "avg_rounds": 3.4,
+      "consensus_rate": 40.0
+    },
+    "cot": {
+      "display_name": "Chain-of-Thought (CoT)",
+      "total_problems": 5,
+      "correct": 1,
+      "incorrect": 4,
+      "accuracy": 20.0,
+      "total_tokens": 2789,
+      "prompt_tokens": 532,
+      "completion_tokens": 2257,
+      "avg_tokens_per_problem": 557.8,
+      "total_time": 60.36661624908447,
+      "avg_time_per_problem": 12.073323249816895,
+      "avg_rounds": 1.0,
+      "consensus_rate": 100.0
+    }
+  }
+}
